@@ -17,6 +17,10 @@ body {
     box-shadow: 0 2.98256px 7.4564px rgb(0 0 0 / 10%);
 }
 
+.mde-preview {
+    min-height: 139vh !important;
+}
+
 button:focus {
     outline: none;
 }
@@ -69,19 +73,20 @@ button:focus {
 }
 
 .title {
-    overflow: hidden;
     width: 100%;
-    cursor: pointer;
     display: flex;
-    justify-content: space-between;
+    padding: 0 10px;
+    cursor: pointer;
+    overflow: hidden;
     align-items: center;
+    justify-content: space-between;
 }
 
 .title--delete {
+    border: none;
     display: none;
     cursor: pointer;
     background-color: transparent;
-    border: none;
 }
 
 .title:hover .title--delete {
@@ -138,5 +143,65 @@ button:focus {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: whitesmoke;
+    background-color: white;
+}
+
+.delete-btn {
+    border: none;
+    display: none;
+    background: none;
+    transition: 0.5s;
+}
+
+.title:hover>.delete-btn {
+    display: block;
+}
+
+.trash-icon {
+    cursor: pointer;
+}
+
+.gg-trash {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(1.1);
+    width: 10px;
+    height: 12px;
+    border: 2px solid transparent;
+    box-shadow:
+        0 0 0 2px,
+        inset -2px 0 0,
+        inset 2px 0 0;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    margin-top: 4px
+}
+
+.gg-trash::after,
+.gg-trash::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.gg-trash::after {
+    background: currentColor;
+    border-radius: 3px;
+    width: 16px;
+    height: 2px;
+    top: -4px;
+    left: -5px
+}
+
+.gg-trash::before {
+    width: 10px;
+    height: 4px;
+    border: 2px solid;
+    border-bottom: transparent;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    top: -7px;
+    left: -2px
 }
